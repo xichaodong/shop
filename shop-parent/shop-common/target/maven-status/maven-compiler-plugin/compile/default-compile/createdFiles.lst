@@ -1,0 +1,4 @@
+com\shop\common\pojo\EUDataGridResult.class
+com\shop\common\utils\IDUtils.class
+com\shop\common\utils\FtpUtil.class
+com\shop\common\utils\ShopResponse.class
