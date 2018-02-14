@@ -30,6 +30,7 @@ public interface ContentCategoryMapper {
         "#{isParent,jdbcType=BIT}, #{created,jdbcType=TIMESTAMP}, ",
         "#{updated,jdbcType=TIMESTAMP})"
     })
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     int insert(ContentCategory record);
 
     @InsertProvider(type=ContentCategorySqlProvider.class, method="insertSelective")

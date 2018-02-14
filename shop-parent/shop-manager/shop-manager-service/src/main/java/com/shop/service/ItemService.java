@@ -12,5 +12,6 @@ import com.shop.pojo.Item;
 public interface ItemService {
     Item getItemById(long itemId);
     EUDataGridResult getItemList(int page, int rows);
-    ShopResponse createItem(Item item);
+    ShopResponse createItem(Item item, String desc, String itemParam);
+
 }

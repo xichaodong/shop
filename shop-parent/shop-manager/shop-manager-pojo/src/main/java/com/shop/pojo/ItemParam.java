@@ -11,6 +11,8 @@ public class ItemParam {
 
     private Date updated;
 
+    private String itemCatName;
+
     private String paramData;
 
     public Long getId() {
@@ -43,6 +45,14 @@ public class ItemParam {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    public String getItemCatName() {
+        return itemCatName;
+    }
+
+    public void setItemCatName(String itemCatName) {
+        this.itemCatName = itemCatName == null ? null : itemCatName.trim();
     }
 
     public String getParamData() {

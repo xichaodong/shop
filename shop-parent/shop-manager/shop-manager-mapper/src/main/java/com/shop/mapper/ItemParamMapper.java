@@ -23,10 +23,10 @@ public interface ItemParamMapper {
     @Insert({
         "insert into item_param (id, item_cat_id, ",
         "created, updated, ",
-        "param_data)",
+        "item_cat_name, param_data)",
         "values (#{id,jdbcType=BIGINT}, #{itemCatId,jdbcType=BIGINT}, ",
         "#{created,jdbcType=TIMESTAMP}, #{updated,jdbcType=TIMESTAMP}, ",
-        "#{paramData,jdbcType=LONGVARCHAR})"
+        "#{itemCatName,jdbcType=VARCHAR}, #{paramData,jdbcType=LONGVARCHAR})"
     })
     int insert(ItemParam record);
 
@@ -35,35 +35,38 @@ public interface ItemParamMapper {
 
     @SelectProvider(type=ItemParamSqlProvider.class, method="selectByExampleWithBLOBs")
     @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.BIGINT, id=true),
-        @Result(column="item_cat_id", property="itemCatId", jdbcType=JdbcType.BIGINT),
-        @Result(column="created", property="created", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="updated", property="updated", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="param_data", property="paramData", jdbcType=JdbcType.LONGVARCHAR)
+        @Result(column="id", property="id", jdbcType= JdbcType.BIGINT, id=true),
+        @Result(column="item_cat_id", property="itemCatId", jdbcType= JdbcType.BIGINT),
+        @Result(column="created", property="created", jdbcType= JdbcType.TIMESTAMP),
+        @Result(column="updated", property="updated", jdbcType= JdbcType.TIMESTAMP),
+        @Result(column="item_cat_name", property="itemCatName", jdbcType= JdbcType.VARCHAR),
+        @Result(column="param_data", property="paramData", jdbcType= JdbcType.LONGVARCHAR)
     })
     List<ItemParam> selectByExampleWithBLOBs(ItemParamExample example);
 
     @SelectProvider(type=ItemParamSqlProvider.class, method="selectByExample")
     @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.BIGINT, id=true),
-        @Result(column="item_cat_id", property="itemCatId", jdbcType=JdbcType.BIGINT),
-        @Result(column="created", property="created", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="updated", property="updated", jdbcType=JdbcType.TIMESTAMP)
+        @Result(column="id", property="id", jdbcType= JdbcType.BIGINT, id=true),
+        @Result(column="item_cat_id", property="itemCatId", jdbcType= JdbcType.BIGINT),
+        @Result(column="created", property="created", jdbcType= JdbcType.TIMESTAMP),
+        @Result(column="updated", property="updated", jdbcType= JdbcType.TIMESTAMP),
+        @Result(column="item_cat_name", property="itemCatName", jdbcType= JdbcType.VARCHAR)
     })
     List<ItemParam> selectByExample(ItemParamExample example);
 
     @Select({
         "select",
-        "id, item_cat_id, created, updated, param_data",
+        "id, item_cat_id, created, updated, item_cat_name, param_data",
         "from item_param",
         "where id = #{id,jdbcType=BIGINT}"
     })
     @Results({
-        @Result(column="id", property="id", jdbcType=JdbcType.BIGINT, id=true),
-        @Result(column="item_cat_id", property="itemCatId", jdbcType=JdbcType.BIGINT),
-        @Result(column="created", property="created", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="updated", property="updated", jdbcType=JdbcType.TIMESTAMP),
-        @Result(column="param_data", property="paramData", jdbcType=JdbcType.LONGVARCHAR)
+        @Result(column="id", property="id", jdbcType= JdbcType.BIGINT, id=true),
+        @Result(column="item_cat_id", property="itemCatId", jdbcType= JdbcType.BIGINT),
+        @Result(column="created", property="created", jdbcType= JdbcType.TIMESTAMP),
+        @Result(column="updated", property="updated", jdbcType= JdbcType.TIMESTAMP),
+        @Result(column="item_cat_name", property="itemCatName", jdbcType= JdbcType.VARCHAR),
+        @Result(column="param_data", property="paramData", jdbcType= JdbcType.LONGVARCHAR)
     })
     ItemParam selectByPrimaryKey(Long id);
 
@@ -84,6 +87,7 @@ public interface ItemParamMapper {
         "set item_cat_id = #{itemCatId,jdbcType=BIGINT},",
           "created = #{created,jdbcType=TIMESTAMP},",
           "updated = #{updated,jdbcType=TIMESTAMP},",
+          "item_cat_name = #{itemCatName,jdbcType=VARCHAR},",
           "param_data = #{paramData,jdbcType=LONGVARCHAR}",
         "where id = #{id,jdbcType=BIGINT}"
     })
@@ -93,7 +97,8 @@ public interface ItemParamMapper {
         "update item_param",
         "set item_cat_id = #{itemCatId,jdbcType=BIGINT},",
           "created = #{created,jdbcType=TIMESTAMP},",
-          "updated = #{updated,jdbcType=TIMESTAMP}",
+          "updated = #{updated,jdbcType=TIMESTAMP},",
+          "item_cat_name = #{itemCatName,jdbcType=VARCHAR}",
         "where id = #{id,jdbcType=BIGINT}"
     })
     int updateByPrimaryKey(ItemParam record);

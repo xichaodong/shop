@@ -36,7 +36,7 @@ public class ItemController {
 
     @RequestMapping(value = "/item/save", method = RequestMethod.POST)
     @ResponseBody
-    private ShopResponse createItem(Item item) {
-        return itemService.createItem(item);
+    private ShopResponse createItem(Item item, String desc, String itemParams) {
+        return itemService.createItem(item, desc, itemParams);
     }
 }

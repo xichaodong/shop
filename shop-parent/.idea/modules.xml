@@ -9,6 +9,8 @@
       <module fileurl="file://$PROJECT_DIR$/shop-manager/shop-manager-service/shop-manager-service.iml" filepath="$PROJECT_DIR$/shop-manager/shop-manager-service/shop-manager-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-manager/shop-manager-web/shop-manager-web.iml" filepath="$PROJECT_DIR$/shop-manager/shop-manager-web/shop-manager-web.iml" />
       <module fileurl="file://$PROJECT_DIR$/shop-parent.iml" filepath="$PROJECT_DIR$/shop-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-portal/shop-portal.iml" filepath="$PROJECT_DIR$/shop-portal/shop-portal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shop-rest/shop-rest.iml" filepath="$PROJECT_DIR$/shop-rest/shop-rest.iml" />
     </modules>
   </component>
 </project>

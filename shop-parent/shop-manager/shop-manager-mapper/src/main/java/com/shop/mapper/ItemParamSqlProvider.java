@@ -47,6 +47,10 @@ public class ItemParamSqlProvider {
             VALUES("updated", "#{updated,jdbcType=TIMESTAMP}");
         }
         
+        if (record.getItemCatName() != null) {
+            VALUES("item_cat_name", "#{itemCatName,jdbcType=VARCHAR}");
+        }
+        
         if (record.getParamData() != null) {
             VALUES("param_data", "#{paramData,jdbcType=LONGVARCHAR}");
         }
@@ -64,6 +68,7 @@ public class ItemParamSqlProvider {
         SELECT("item_cat_id");
         SELECT("created");
         SELECT("updated");
+        SELECT("item_cat_name");
         SELECT("param_data");
         FROM("item_param");
         applyWhere(example, false);
@@ -85,6 +90,7 @@ public class ItemParamSqlProvider {
         SELECT("item_cat_id");
         SELECT("created");
         SELECT("updated");
+        SELECT("item_cat_name");
         FROM("item_param");
         applyWhere(example, false);
         
@@ -118,6 +124,10 @@ public class ItemParamSqlProvider {
             SET("updated = #{record.updated,jdbcType=TIMESTAMP}");
         }
         
+        if (record.getItemCatName() != null) {
+            SET("item_cat_name = #{record.itemCatName,jdbcType=VARCHAR}");
+        }
+        
         if (record.getParamData() != null) {
             SET("param_data = #{record.paramData,jdbcType=LONGVARCHAR}");
         }
@@ -134,6 +144,7 @@ public class ItemParamSqlProvider {
         SET("item_cat_id = #{record.itemCatId,jdbcType=BIGINT}");
         SET("created = #{record.created,jdbcType=TIMESTAMP}");
         SET("updated = #{record.updated,jdbcType=TIMESTAMP}");
+        SET("item_cat_name = #{record.itemCatName,jdbcType=VARCHAR}");
         SET("param_data = #{record.paramData,jdbcType=LONGVARCHAR}");
         
         ItemParamExample example = (ItemParamExample) parameter.get("example");
@@ -149,6 +160,7 @@ public class ItemParamSqlProvider {
         SET("item_cat_id = #{record.itemCatId,jdbcType=BIGINT}");
         SET("created = #{record.created,jdbcType=TIMESTAMP}");
         SET("updated = #{record.updated,jdbcType=TIMESTAMP}");
+        SET("item_cat_name = #{record.itemCatName,jdbcType=VARCHAR}");
         
         ItemParamExample example = (ItemParamExample) parameter.get("example");
         applyWhere(example, true);
@@ -169,6 +181,10 @@ public class ItemParamSqlProvider {
         
         if (record.getUpdated() != null) {
             SET("updated = #{updated,jdbcType=TIMESTAMP}");
+        }
+        
+        if (record.getItemCatName() != null) {
+            SET("item_cat_name = #{itemCatName,jdbcType=VARCHAR}");
         }
         
         if (record.getParamData() != null) {
