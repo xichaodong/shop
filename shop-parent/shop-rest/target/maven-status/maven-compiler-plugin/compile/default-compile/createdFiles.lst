@@ -1,4 +1,7 @@
+com\shop\rest\dao\JedisCilent.class
 com\shop\rest\controller\ContentController.class
+com\shop\rest\dao\impl\JedisClientSingle.class
 com\shop\rest\service\impl\ContentServiceImpl.class
+com\shop\rest\dao\impl\JedisClientCluster.class
 com\shop\rest\service\impl\ItemCatServiceImpl.class
 com\shop\rest\service\ContentService.class
